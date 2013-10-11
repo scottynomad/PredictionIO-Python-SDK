@@ -51,7 +51,7 @@ def batch_import_task(app_data, client, all_info=False):
 				sys.stdout.flush()
 
 		client.identify(v.uid)
-		client.record_action_on_item("rate", v.iid, { "pio_rate": v.rating, "pio_t": v.t })
+		client.record_action_on_item("rate", v.iid, { "pio_rate": v.rating })
 
 	sys.stdout.write('\r[Info] %s rate actions were imported.\n' % count)
 	sys.stdout.flush()
