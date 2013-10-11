@@ -34,7 +34,7 @@ def batch_import_task(app_data, client, all_info=False):
 				sys.stdout.write('\r[Info] %s' % count)
 				sys.stdout.flush()
 
-		client.create_item(v.iid, ("movie",))
+		client.create_item(v.iid, ("job",))
 	
 	sys.stdout.write('\r[Info] %s items were imported.\n' % count)
 	sys.stdout.flush()
