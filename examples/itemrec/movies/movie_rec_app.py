@@ -5,7 +5,7 @@ import sys
 
 from app_config import APP_KEY, API_URL
 
-ENGINE_NAME = 'movie-rec'
+ENGINE_NAME = 'JobRecs'
 
 class App:
 
@@ -118,7 +118,7 @@ class App:
 			for a in actions:
 				item = self._app_data.get_item(a.iid)
 				if item:
-					print "[Info] %s, rating = %s" % (item.name, a.rating)
+					print "[Info] %s, rating = %s" % (a.iid, a.rating)
 				else:
 					print "[Error] Invalid item id %s" % a.iid
 		else:

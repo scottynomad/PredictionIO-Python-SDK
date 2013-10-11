@@ -16,27 +16,29 @@ RATE_ACTIONS_DELIMITER = "|"
 
 class User:
 	def __init__(self, uid):
-		self.uid = uid
+		self.uid = uid.strip()
 		self.rec = [] # recommendations, list of iid
 
 	def __str__(self):
-		return "User[uid=%s,rec=%s]" % (self.uid, self.rec)
+		return "User[uid=%s,rec=%s]" % (int(self.uid),
+						int(self.rec))
 
 class Item:
 	def __init__(self, iid):
-		self.iid = iid
+		self.iid = iid.strip()
 
 	def __str__(self):
-		return "Item[iid=%s]" % (self.iid)
+		return "Item[iid=%s]" % (int(self.iid))
 
 class RateAction:
 	def __init__(self, uid, iid, rating):
-		self.uid = uid
-		self.iid = iid
-		self.rating = rating
+		self.uid = uid.strip()
+		self.iid = iid.strip()
+		self.rating = rating.strip()
 
 	def __str__(self):
-		return "RateAction[uid=%s,iid=%s,rating=%s]" % (self.uid, self.iid, self.rating)
+		return "RateAction[uid=%s,iid=%s,rating=%s]" % (
+		    int(self.uid), int(self.iid), int(self.rating))
 
 
 class AppData:
